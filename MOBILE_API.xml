@@ -4916,6 +4916,10 @@
             <description>The software version of the system that implements the SmartDeviceLink core.</description>
         </param>
 
+        <param name="systemHardwareVersion" type="String" maxlength="500" mandatory="false" platform="documentation" since="7.1">
+        	<description>The hardware version of the system</description>
+    	</param>
+
         <param name="iconResumed" type="Boolean" mandatory="false" since="5.0">
             <description>
                 Existence of apps icon at system. If true, apps icon
