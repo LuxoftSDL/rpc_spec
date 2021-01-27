@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <?xml-stylesheet type="text/xml" href="protocol2html.xsl"?>
 
-<interface name="SmartDeviceLink RAPI" version="7.1.0" minVersion="1.0" date="2020-11-04">
+<interface name="SmartDeviceLink RAPI" version="7.0.0" minVersion="1.0" date="2020-11-04">
     <enum name="Result" internal_scope="base" since="1.0">
         <element name="SUCCESS">
             <description>The request succeeded</description>
@@ -589,7 +589,7 @@
         <element name="BOTH" />
     </enum>
 
-    <enum name="AppCapabilityType" since="7.1">
+    <enum name="AppCapabilityType" since="7.0">
         <description>Enumerations of all available app capability types</description>
         <element name="VIDEO_STREAMING"/>
     </enum>
@@ -3081,10 +3081,10 @@
         <element name="OnRCStatusID" value="32785" hexvalue="8011" since="5.0" />
         <element name="OnAppServiceDataID" value="32786" hexvalue="8012" since="5.1" />
         <element name="OnSystemCapabilityUpdatedID" value="32787" hexvalue="8013" since="5.1" />
-        <element name="OnSubtleAlertPressedID" value="32788" hexvalue="8014" since="7.0" />
+        <element name="OnAppCapabilityUpdatedID" value="32788" hexvalue="8014" since="7.0" />
         <element name="OnUpdateFileID" value="32789" hexvalue="8015" since="7.0" />
         <element name="OnUpdateSubMenuID" value="32790" hexvalue="8016" since="7.0" />
-        <element name="OnAppCapabilityUpdatedID" value="32791" hexvalue="8017" since="7.1"/>
+        <element name="OnSubtleAlertPressedID" value="32791" hexvalue="8017" since="7.1"/>
 
         <!--
          Ford Specific Request / Response RPCs
@@ -4693,7 +4693,7 @@
         </param>
     </struct>
 
-    <struct name="AppCapability" since="7.1">
+    <struct name="AppCapability" since="7.0">
         <param name="appCapabilityType" type="AppCapabilityType" mandatory="true">
             <description>
                 Used as a descriptor of what data to expect in this struct.
@@ -8842,7 +8842,7 @@
         </param>
     </function>
       
-    <function name="OnAppCapabilityUpdated" functionID="OnAppCapabilityUpdatedID" messagetype="notification" since="7.1">
+    <function name="OnAppCapabilityUpdated" functionID="OnAppCapabilityUpdatedID" messagetype="notification" since="7.0">
         <description>A notification to inform SDL Core that a specific app capability has changed.</description>
         <param name="appCapability" type="AppCapability" mandatory="true">
             <description>The app capability that has been updated</description>
