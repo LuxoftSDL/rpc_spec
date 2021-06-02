@@ -3223,7 +3223,8 @@
         <element name="OnUpdateFileID" value="32789" hexvalue="8015" since="7.0" />
         <element name="OnUpdateSubMenuID" value="32790" hexvalue="8016" since="7.0" />
         <element name="OnAppCapabilityUpdatedID" value="32791" hexvalue="8017" since="7.1"/>
-
+	<element name="OnSeekMediaClockTimerID" value="32792" hexvalue="8018" since="7.1" />
+	
         <!--
          Ford Specific Request / Response RPCs
          Range = 0x 0001 0000 - 0x 0001 7FFF
@@ -6227,6 +6228,11 @@
                 e.g. If this parameter is set to `0.5`, the timer will advance one second per two seconds real-time, or at 50% speed. If this parameter is set to `2.0`, the timer will advance two seconds per one second real-time, or at 200% speed.
             </description>
         </param>
+        <param name="enableSeek" type="Boolean" mandatory="false">
+            <description>
+            Defines if seek media clock timer functionality will be available. If omitted, the value is set to false. The value is retained until the next SetMediaClockTimer is sent.
+            </description>
+        </param>
     </function>
     
     <function name="SetMediaClockTimer" functionID="SetMediaClockTimerID" messagetype="response" since="1.0">
@@ -9150,6 +9156,13 @@
 
         <param name="updateSubCells" type="Boolean" mandatory="false">
             <description>If not set, assume false. If true, the app should send AddCommands with parentIDs matching the menuID. These AddCommands will then be attached to the submenu and displayed if the submenu is selected.</description>
+        </param>
+    </function>
+    
+    <function name="OnSeekMediaClockTimer" functionID="OnSeekMediaClockTimerID" messagetype="notification">
+        <description> Callback for the seek media clock timer notification. Notifies the application of progress bar seek event on the mediaclock timer. System will automatically update the media clock timer position based on the seek notification location. </description> 
+        <param name="seekTime" type="StartTime" mandatory="true">
+        <description>See StartTime.</description>
         </param>
     </function>
     
