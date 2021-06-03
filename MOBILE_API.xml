@@ -9159,7 +9159,7 @@
         </param>
     </function>
     
-    <function name="OnSeekMediaClockTimer" functionID="OnSeekMediaClockTimerID" messagetype="notification">
+    <function name="OnSeekMediaClockTimer" functionID="OnSeekMediaClockTimerID" messagetype="notification" since="7.1">
         <description> Callback for the seek media clock timer notification. Notifies the application of progress bar seek event on the mediaclock timer. System will automatically update the media clock timer position based on the seek notification location. </description> 
         <param name="seekTime" type="StartTime" mandatory="true">
         <description>See StartTime.</description>
