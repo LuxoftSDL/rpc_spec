@@ -6228,7 +6228,7 @@
                 e.g. If this parameter is set to `0.5`, the timer will advance one second per two seconds real-time, or at 50% speed. If this parameter is set to `2.0`, the timer will advance two seconds per one second real-time, or at 200% speed.
             </description>
         </param>
-        <param name="enableSeek" type="Boolean" mandatory="false">
+        <param name="enableSeek" type="Boolean" mandatory="false" since="7.1">
             <description>
             Defines if seek media clock timer functionality will be available. If omitted, the value is set to false. The value is retained until the next SetMediaClockTimer is sent.
             </description>
