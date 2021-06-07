@@ -1550,6 +1550,7 @@ Enumeration linking function names with function IDs in SmartDeviceLink protocol
 |`SyncPDataID`||
 |`OnEncodedSyncPDataID`||
 |`OnSyncPDataID`||
+|`OnSeekMediaClockTimerID`||
 
 
 ### messageType
@@ -3959,7 +3960,7 @@ Sets the initial media clock value and automatic update method.
 |`forwardSeekIndicator`|SeekStreamingIndicator|False|Used to control the forward seek button to either skip forward a set amount of time or to the next track.|
 |`backSeekIndicator`|SeekStreamingIndicator|False|Used to control the back seek button to either skip back a set amount of time or to the previous track.|
 |`countRate`|Float|False|The value of this parameter is the amount that the media clock timer will advance per 1.0 seconds of real time. Values less than 1.0 will therefore advance the timer slower than real-time, while values greater than 1.0 will advance the timer faster than real-time. e.g. If this parameter is set to `0.5`, the timer will advance one second per two seconds real-time, or at 50% speed. If this parameter is set to `2.0`, the timer will advance two seconds per one second real-time, or at 200% speed.|
-
+|`enableSeek`|Boolean|False|Defines if seek media clock timer functionality will be available. If omitted, the value is set to false. The value is retained until the next SetMediaClockTimer is sent.|
 
 ### SetMediaClockTimer
 Message Type: **response**
